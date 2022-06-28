@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency count of elements</title>
+        <script>
+             function count()
+          {  var i,j,flag=0;
+            var n = document.getElementById("n").value;
+            var count=new Array(n)
+            var elements= new Array(n);
+            var result=new Array(n);
+            for(i=0;i<n;i++)
+            {   j=i+1;
+                elements[i] = prompt("Enter the element "+ j +" to array:");
+            }
+            document.getElementById('full').value=elements;
+            for(i=0;i<n;i++)
+            {  count[i]=0;
+               for(j=0;j<n;j++)
+               {
+                 if(elements[i]==elements[j])
+                 {
+                   count[i]++;
+                   flag=1;
+                 }
+                 result[i]=count[i];
+               }
+            }
+            document.getElementById('result').value="Frequency of "+ elements + "are " +result+" respectively.";
+          
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+        <h1 style="color:red;">count Array Elements</h1>
+        Enter number of elements:<input type="text" id="n" placeholder="Enter  number of Elements"><br><br>
+        <input type="button" onclick="count()" value=" Submit " style="background-color:green;color:snow;border-radius:7cm;border-color:green;width:82px;">&emsp;&emsp;&emsp;
+        <input type="reset" value="  Reset  " style="background-color:red;color:snow;border-radius:7cm;border-color:red;width: 82px;">
+       </form>
+       <br><br>
+       <input type="text"  id="full" placeholder="Array" style="width: 300px;" readonly><br><br><br>
+       <input type="text" id="result" placeholder="Frequency" style="width: 300px;" readonly></span>
+      
+    </body>
+    </html>
